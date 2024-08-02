@@ -462,24 +462,6 @@ client.on('message', message => {
             }}
             )
     })  .catch(console.error);
-
-    }
-});
-client.on('message', message => { 
- let args = message.content.split(' ').slice(1);
-    if(message.content.startsWith(prefix + 'short')) {
-    if(!message.channel.guild) return;  
-
-        googl.setKey('AIzaSyC2Z2mZ_nZTcSvh3QvIyrmOIFP6Ra6co6w');
-        googl.getKey();
-        googl.shorten(args.join(' ')).then(shorturl => {
-            message.channel.send(''+shorturl)
-        }).catch(e=>{
-            console.log(e.message);
-            message.channel.send('Error!');
-            
-        });
-}
 });
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'tag')) {
